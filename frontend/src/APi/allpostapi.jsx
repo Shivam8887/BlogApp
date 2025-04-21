@@ -1,4 +1,6 @@
-const host = import.meta.env.MODE === "development" ? "http://localhost:3000":"/";
+const host = import.meta.env.MODE === "development"
+  ? "http://localhost:3000"
+  : window.location.origin;
+
 export const allpost = `${host}/allpost`;
-export const comment = `${host}/comment`
-// fdkdfskds
+export const comment = `${host}/comment`;
