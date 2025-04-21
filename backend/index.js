@@ -7,7 +7,7 @@ const { dbConnect } = require('./Configs/database');
 
 const app = express();
 const port = process.env.PORT || 4000;
-
+const __dirname = path.resolve();
 // Connect to MongoDB
 dbConnect();
 
