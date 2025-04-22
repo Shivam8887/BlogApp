@@ -126,7 +126,7 @@ export const Mypost = () => {
     };
 
     return (
-        <div className="p-6">
+        <div className="p-6 text-black">
             <h2 className="text-center text-xl font-bold">Create a New Post</h2>
 
             {/* Create Post Form */}
