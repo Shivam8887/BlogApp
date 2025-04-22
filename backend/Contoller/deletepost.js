@@ -1,5 +1,5 @@
-const {Post} = require("../Models/blogModels"); 
-exports.deletePost = async (req, res) => {  
+import  { Post } from "../Models/blogModels.js";
+export const deletePost = async (req, res) => {  
     try {
         const { id } = req.params;
         if (id) {

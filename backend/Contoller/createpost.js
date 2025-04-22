@@ -1,5 +1,5 @@
-const { Post } = require("../Models/blogModels");
-exports.createpost = async (req, res) => {
+import  { Post } from "../Models/blogModels.js";
+export const createpost = async (req, res) => {
 
     console.log(req.body);
     console.log(req.user);

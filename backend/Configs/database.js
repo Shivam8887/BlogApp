@@ -1,7 +1,9 @@
-const mongoose = require('mongoose');
-require('dotenv').config();
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+dotenv.config();
+
 const dbURI = process.env.DATABASE_URI;
-exports.dbConnect = async ()=>{
+export const dbConnect = async ()=>{
     try{
         await mongoose.connect(dbURI,{});
         console.log("DB Connection Successful")

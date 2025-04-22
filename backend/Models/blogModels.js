@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import  mongoose from 'mongoose';
 
 const PostSchema = new mongoose.Schema(
     {
@@ -32,4 +32,4 @@ const Post = mongoose.model('Post', PostSchema);
 const Comment = mongoose.model('Comment', CommentSchema);
 const Like = mongoose.model('Like', LikeSchema);
 
-module.exports = { Post, Comment, Like };
+export { Post, Comment, Like };

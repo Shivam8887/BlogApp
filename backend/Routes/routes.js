@@ -1,19 +1,19 @@
-const express = require('express');
-const { signup } = require('../Contoller/register');
-const { login } = require('../Contoller/login');
-const { auth } = require('../Contoller/auth');
-const { blogs } = require('../Contoller/blogs');
-const {createpost} = require('../Contoller/createpost')
-const  {allpost} = require('../Contoller/userpost')
-const {deletePost} = require('../Contoller/deletepost')
-const { getPosts, createPost } = require('../Contoller/blogController');
-const { updatepost } = require('../Contoller/updatepost');
-const { allpostdata } = require('../Contoller/allpost');
-const { likePost } = require('../Contoller/likepost');
-const {commenthand} = require('../Contoller/comment');
-const {getComments} = require('../Contoller/getcomment');
-const router = express.Router();
+import express from 'express';
+import { signup } from '../Contoller/register.js';
+import { login } from '../Contoller/login.js';
+import { auth } from '../Contoller/auth.js';
+import { blogs } from '../Contoller/blogs.js';
+import { createpost } from '../Contoller/createpost.js';
+import { allpost } from '../Contoller/userpost.js';
+import { deletePost } from '../Contoller/deletepost.js';
+import { getPosts, createPost } from '../Contoller/blogController.js';
+import { updatepost } from '../Contoller/updatepost.js';
+import { allpostdata } from '../Contoller/allpost.js';
+import { likePost } from '../Contoller/likepost.js';
+import { commenthand } from '../Contoller/comment.js';
+import { getComments } from '../Contoller/getcomment.js';
 
+const router = express.Router();
 
 router.post('/signup',signup);
 router.post('/login',login);
@@ -33,4 +33,4 @@ router.post('/allpost/like', auth, likePost);
 router.post('/comment',auth,commenthand);
 router.get('/comment/:postId',auth,getComments);
 
-module.exports = router;
+export default router;

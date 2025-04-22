@@ -1,4 +1,4 @@
-exports.blogs = async (req, res) => {
+export const blogs = async (req, res) => {
     if(!req.user){
         return res.status(500).json({Message:"Data not present in req.body"})
     }

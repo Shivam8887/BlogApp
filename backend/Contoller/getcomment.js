@@ -1,6 +1,6 @@
-const { Post } = require("../Models/blogModels");
+import  { Post } from "../Models/blogModels.js";
 
-exports.getComments = async (req, res) => {
+export const getComments = async (req, res) => {
     try {
         const { postId } = req.params; // Get postId from request parameters
 

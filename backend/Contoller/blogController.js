@@ -1,4 +1,4 @@
-const { Post, Comment, Like } = require("../Models/blogModels");
+import { Post, Comment, Like } from "../Models/blogModels.js";
 
 // Get all posts
 const getPosts = async (req, res) => {
@@ -59,4 +59,5 @@ const likePost = async (req, res) => {
   }
 };
 
-module.exports = { getPosts, createPost, deletePost, addComment, likePost };
+export { getPosts, createPost, deletePost, addComment, likePost };
+

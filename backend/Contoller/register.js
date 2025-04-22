@@ -1,7 +1,7 @@
-const User = require('../Models/user');
-const bcrypt = require('bcryptjs');
+import  User from '../Models/user.js';
+import  bcrypt from 'bcryptjs';
 
-exports.signup = async (req, res) => {
+export const signup = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 

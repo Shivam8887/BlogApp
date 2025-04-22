@@ -1,6 +1,8 @@
-const jwt = require('jsonwebtoken');
-require("dotenv").config();
-exports.auth = (req, res, next) => {
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+dotenv.config();
+
+export const auth = (req, res, next) => {
     try {
         let tokenValue;
         console.log( "Data in cookies",req.cookies.token)

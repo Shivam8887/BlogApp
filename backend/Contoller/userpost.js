@@ -1,6 +1,6 @@
-const { Post } = require("../Models/blogModels");
+import { Post } from "../Models/blogModels.js";
 
-exports.allpost = async (req,res)=>{
+export const allpost = async (req,res)=>{
     try{
           const {email} = req.user;
           if(email){

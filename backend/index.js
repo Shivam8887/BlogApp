@@ -1,9 +1,11 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require("cors");
-const cookieParser = require('cookie-parser');
-const path = require('path');
-const { dbConnect } = require('./Configs/database');
+import dotenv from 'dotenv';
+dotenv.config();
+
+import express from 'express';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
+import path from 'path';
+import { dbConnect } from './Configs/database.js'; 
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -12,7 +14,6 @@ const __dirname = path.resolve();
 dbConnect();
 
 // CORS setup
-app.use(cookieParser());
 app.use(
   cors({
     origin: "http://localhost:5173",
@@ -23,17 +24,14 @@ app.use(
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.urlencoded({ extended: true }));
-
 // Session setup
-
 // Health Check
 app.get('/health', (req, res) => {
     res.status(200).json({ status: 'Server is healthy' });
 });
 
 // API routes
-const routes = require('./Routes/routes');
+import routes from './Routes/routes.js';
 app.use('/', routes);
 
 if (process.env.NODE_ENV === "production") {

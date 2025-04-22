@@ -1,5 +1,5 @@
-const {Post} = require('../Models/blogModels');
-exports.updatepost = async (req, res) => {
+import {Post} from '../Models/blogModels.js';
+export const updatepost = async (req, res) => {
     try{
         const {id} = req.params;
         const {title, content} = req.body;

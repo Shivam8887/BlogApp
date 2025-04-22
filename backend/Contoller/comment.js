@@ -1,6 +1,6 @@
-const { Post, Comment } = require("../Models/blogModels");
+import { Post, Comment } from "../Models/blogModels.js";
 
-exports.commenthand = async (req, res) => {
+export const commenthand = async (req, res) => {
     try {
         const { comment, postId } = req.body;
         const {email} = req.user; // Correct field names
