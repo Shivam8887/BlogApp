@@ -1,4 +1,4 @@
-const host =import.meta.env.MODE === "development" ? "http://localhost:3000":"https://blog-update-3-1.onrender.com/";
+const host =import.meta.env.MODE === "development" ? "http://localhost:3000":"https://blogapp-cit3.onrender.com/";
 export const login = `${host}login`;
 export const signup = `${host}signup`;
 export const blogs = `${host}blogs`;
