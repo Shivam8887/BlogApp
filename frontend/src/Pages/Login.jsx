@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../APi/api';
 import axios from 'axios';
-
+import { authStore } from '../Store/auth';
 export const Login = () => {
+  const setAuth = authStore((state) => state.setAuth);
   const navigate = useNavigate();
   const [logindata, setlogindata] = useState({
     email: "",
@@ -27,10 +28,10 @@ export const Login = () => {
     try {
       const res = await axios.post(login, logindata, {
         withCredentials: true,
-        headers: { 'Content-Type': 'application/json' }, // Add headers if required
+        headers: { 'Content-Type': 'application/json' }, 
       });
-  
-      console.log("Full Response:", res); // Log entire response
+      console.log(res.data.Name)
+      setAuth(res.data.Name);
   
       if (res.status === 200) {
   

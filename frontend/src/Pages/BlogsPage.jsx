@@ -1,12 +1,15 @@
 import { Allpost } from "../Components/allpost";
 import { Mypost} from "../Components/post";
 import { useState,useEffect } from "react";
+import {authStore} from '../Store/auth'
 export const BlogsPage = () => {
+  const {isAuth} = authStore();
+  const [Name,setname] = useState(isAuth);
   const [isemypost, setIsemypost] = useState(true); 
   
   return (
     <div className="flex flex-col items-center min-h-screen bg-gradient-to-br from-blue-100 to-purple-200 p-8">
-    <h1 className="text-5xl font-extrabold text-gray-800 drop-shadow-lg">Blogs</h1>
+    <h1 className="text-5xl font-extrabold text-gray-800 drop-shadow-lg mt-10">{`Hii ${Name}`}</h1>
 
     {/* Toggle Buttons */}
     <div className="flex justify-center space-x-6 bg-white bg-opacity-30 backdrop-blur-lg shadow-md rounded-2xl p-3 mt-6">

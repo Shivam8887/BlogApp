@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Settings } from "lucide-react";
 
 export default function Header() {
@@ -10,11 +10,12 @@ export default function Header() {
     <header className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-lg fixed top-0 left-0 w-full z-50">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo / App Title */}
-        <h2 className="text-2xl font-bold tracking-wide">
-          <Link to="/" className="hover:text-slate-200 transition duration-300">
-            🌟 Blogify
-          </Link>
-        </h2>
+            <h2 className="text-2xl font-bold tracking-wide">
+            <Link to="/" className="hover:text-slate-200 transition duration-300">
+              🌟 Blogify
+            </Link>
+          </h2>
+
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8 font-medium text-lg">

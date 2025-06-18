@@ -1,26 +1,27 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Homepage } from './Pages/Homepage';
 import { Login } from './Pages/Login';
 import { BlogsPage } from './Pages/BlogsPage';
-import { Signup } from './Pages/Sigup';
+import { Signup } from './Pages/Signup'; 
 import Footer from './Components/footer';
 import Headers from './Components/header';
-import {Setting}  from './Components/setting';
+import { Setting } from './Components/setting';
+import {authStore} from './Store/auth';
 
 function App() {
+  const { isAuth } = authStore();
+
   return (
     <div>
-    
       <Headers />
-      <Setting></Setting>
       <Routes>
+        <Route path="/" element={<Homepage />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/" element={<Homepage/>} />
-        <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/blogs' element={<BlogsPage></BlogsPage>}></Route>
-        <Route path='/setting' element={<Setting/>}></Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/blogs" element={isAuth ? <BlogsPage /> : <Navigate to="/login" />} />
+        <Route path="/setting" element={<Setting />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
